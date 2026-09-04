@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La vie commence à 50 ans — Mireille Tano-Fram</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ivoire: #FAF6F0;
+    --ivoire-deep: #F1E9DD;
+    --encre: #2B2620;
+    --encre-soft: #5C544A;
+    --or: #C9A876;
+    --or-deep: #A9855A;
+    --ciel: #A8C4D9;
+    --blush: #E8D5CE;
+    --white: #FFFFFF;
+    --radius: 2px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--ivoire);
+    color: var(--encre);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, .display {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+  .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+  .container-wide { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+  section { padding: 64px 0; }
+  a { text-decoration: none; color: inherit; }
+  img { max-width: 100%; display: block; }
+
+  /* Ornament */
+  .ornament {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    margin-bottom: 28px; color: var(--or-deep); font-size: 13px; letter-spacing: 0.15em;
+  }
+  .ornament::before, .ornament::after {
+    content: ''; width: 28px; height: 1px; background: var(--or);
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(180deg, var(--ivoire) 0%, var(--ivoire-deep) 100%);
+    padding: 80px 24px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-watermark {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 480px; max-width: 140vw;
+    opacity: 0.06;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .hero > * { position: relative; z-index: 1; }
+  .hero-eyebrow {
+    font-size: 13px; letter-spacing: 0.18em; color: var(--or-deep);
+    text-transform: uppercase; margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-size: clamp(2.4rem, 8vw, 4rem);
+    max-width: 780px;
+  }
+  .hero .subtitle {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--or-deep);
+    font-size: clamp(1.1rem, 3.5vw, 1.5rem);
+    margin-top: 18px;
+  }
+  .hero .hook {
+    max-width: 520px;
+    margin: 32px auto 0;
+    font-size: 1.05rem;
+    color: var(--encre-soft);
+  }
+  .hero-ctas {
+    margin-top: 40px;
+    display: flex; flex-direction: column; gap: 14px; width: 100%; max-width: 340px;
+  }
+
+  /* Buttons */
+  .btn {
+    display: block; text-align: center; padding: 16px 28px;
+    border-radius: var(--radius); font-size: 0.95rem; font-weight: 600;
+    letter-spacing: 0.02em; cursor: pointer; border: none; transition: transform 0.15s ease, opacity 0.15s ease;
+  }
+  .btn:active { transform: scale(0.98); }
+  .btn-primary { background: var(--encre); color: var(--ivoire); }
+  .btn-primary:hover { opacity: 0.88; }
+  .btn-secondary { background: transparent; color: var(--encre); border: 1px solid var(--encre-soft); }
+  .btn-secondary:hover { background: rgba(0,0,0,0.03); }
+  .btn-gold { background: var(--or-deep); color: var(--white); }
+  .btn-gold:hover { opacity: 0.9; }
+
+  /* Body prose */
+  .prose p { margin-bottom: 18px; font-size: 1.02rem; color: var(--encre-soft); }
+  .prose p:last-child { margin-bottom: 0; }
+  .center { text-align: center; }
+  .kicker {
+    text-align: center; font-size: 13px; letter-spacing: 0.16em;
+    color: var(--or-deep); text-transform: uppercase; margin-bottom: 16px;
+  }
+  h2.section-title {
+    text-align: center; font-size: clamp(1.7rem, 5vw, 2.4rem); margin-bottom: 36px;
+  }
+
+  /* "Pour toi si" list */
+  .qualify-list { list-style: none; max-width: 560px; margin: 0 auto; }
+  .qualify-list li {
+    padding: 16px 0 16px 32px; position: relative; font-size: 1.05rem;
+    border-bottom: 1px solid rgba(43,38,32,0.08);
+  }
+  .qualify-list li:last-child { border-bottom: none; }
+  .qualify-list li::before {
+    content: '—'; position: absolute; left: 0; color: var(--or-deep);
+  }
+  .qualify-final {
+    margin-top: 32px; text-align: center; font-family: 'Fraunces', serif;
+    font-style: italic; font-size: 1.25rem; color: var(--encre); max-width: 520px;
+    margin-left: auto; margin-right: auto;
+  }
+
+  /* Movements path */
+  .movements-wrap { background: var(--white); }
+  .movements-path {
+    display: flex; flex-direction: column; max-width: 560px; margin: 0 auto;
+    position: relative;
+  }
+  .movements-path::before {
+    content: ''; position: absolute; left: 21px; top: 12px; bottom: 12px;
+    width: 1px; background: linear-gradient(180deg, var(--or) 0%, var(--ciel) 100%);
+  }
+  .movement-item {
+    display: flex; align-items: flex-start; gap: 20px; padding: 14px 0; position: relative;
+  }
+  .movement-num {
+    flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%;
+    background: var(--ivoire); border: 1px solid var(--or);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Fraunces', serif; font-size: 0.95rem; color: var(--or-deep);
+    z-index: 1;
+  }
+  .movement-title {
+    padding-top: 10px; font-size: 1.05rem; font-weight: 500;
+  }
+
+  /* Transition break */
+  .transition-break {
+    text-align: center; padding: 96px 24px;
+  }
+  .transition-break h2 {
+    font-size: clamp(1.8rem, 6vw, 2.6rem);
+  }
+  .transition-break .sub {
+    font-family: 'Fraunces', serif; font-style: italic; color: var(--or-deep);
+    margin-top: 10px; font-size: 1.2rem;
+  }
+
+  /* Duo section */
+  .duo-wrap { background: var(--ivoire-deep); }
+  .duo-cards { display: flex; flex-direction: column; gap: 20px; max-width: 640px; margin: 0 auto 40px; }
+  .duo-card {
+    background: var(--white); border-radius: var(--radius); padding: 32px 28px;
+    border: 1px solid rgba(43,38,32,0.08);
+  }
+  .duo-card .icon-label {
+    font-size: 13px; letter-spacing: 0.12em; color: var(--or-deep); text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .duo-card h3 { font-size: 1.3rem; margin-bottom: 12px; }
+  .duo-card ul { list-style: none; }
+  .duo-card ul li {
+    padding: 4px 0; color: var(--encre-soft); font-size: 0.98rem;
+  }
+  .duo-together {
+    text-align: center; margin-top: 40px;
+  }
+  .duo-together .line1, .duo-together .line2 {
+    font-family: 'Fraunces', serif; font-size: clamp(1.3rem, 4vw, 1.8rem);
+  }
+  .duo-together .line1 { color: var(--encre); }
+  .duo-together .line2 { color: var(--or-deep); }
+
+  /* Funnel path */
+  .funnel-wrap { max-width: 480px; margin: 0 auto 56px; }
+  .funnel-step {
+    display: flex; align-items: center; gap: 16px; padding: 16px 20px;
+    background: var(--white); border: 1px solid rgba(43,38,32,0.1); border-radius: var(--radius);
+    margin-bottom: 4px;
+  }
+  .funnel-step.highlight { border-color: var(--or); background: linear-gradient(180deg, #FFFDF9 0%, var(--ivoire-deep) 100%); }
+  .funnel-step .fn-num {
+    font-family: 'Fraunces', serif; font-size: 0.9rem; color: var(--or-deep);
+    width: 24px; flex-shrink: 0;
+  }
+  .funnel-step .fn-body { flex: 1; }
+  .funnel-step .fn-title { font-weight: 600; font-size: 0.98rem; }
+  .funnel-step .fn-sub { font-size: 0.85rem; color: var(--encre-soft); margin-top: 2px; }
+  .funnel-step .fn-price { font-family: 'Fraunces', serif; font-size: 1.1rem; color: var(--encre); flex-shrink: 0; }
+  .funnel-arrow { text-align: center; color: var(--or); font-size: 1.1rem; padding: 2px 0; }
+
+  /* Pricing */
+  .pricing-wrap { background: var(--white); }
+  .pricing-cards {
+    display: flex; flex-direction: column; gap: 20px; max-width: 640px; margin: 0 auto;
+  }
+  .price-card {
+    border: 1px solid rgba(43,38,32,0.12); border-radius: var(--radius);
+    padding: 32px 28px; text-align: center; position: relative;
+  }
+  .price-card.featured {
+    border: 2px solid var(--or); background: linear-gradient(180deg, #FFFDF9 0%, var(--ivoire-deep) 100%);
+  }
+  .badge {
+    display: inline-block; background: var(--or); color: var(--white);
+    font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 5px 14px; border-radius: 20px; margin-bottom: 16px;
+  }
+  .price-card h3 { font-size: 1.15rem; margin-bottom: 4px; }
+  .price-card .price-sub { font-size: 0.9rem; color: var(--encre-soft); margin-bottom: 18px; }
+  .price-card .price-value {
+    font-family: 'Fraunces', serif; font-size: 2rem; margin-bottom: 24px; color: var(--encre);
+  }
+  .price-value .placeholder { color: var(--encre-soft); font-size: 1rem; font-style: italic; }
+
+  /* What you get */
+  .receive-list { list-style: none; max-width: 480px; margin: 0 auto; }
+  .receive-list li {
+    display: flex; align-items: baseline; gap: 12px; padding: 10px 0; font-size: 1rem;
+  }
+  .receive-list li::before {
+    content: '✓'; color: var(--or-deep); font-weight: 600; flex-shrink: 0;
+  }
+
+  /* About */
+  .about-wrap { background: var(--ivoire-deep); }
+  .about-photo-slot {
+    width: 140px; height: 140px; border-radius: 50%; margin: 0 auto 28px;
+    background: var(--white); border: 1px solid var(--or);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; color: var(--encre-soft); text-align: center; padding: 10px;
+  }
+  .about-wrap h3 { text-align: center; font-size: 1.4rem; margin-bottom: 6px; }
+  .about-role { text-align: center; color: var(--or-deep); font-size: 0.95rem; margin-bottom: 24px; }
+
+  /* FAQ */
+  .faq-item {
+    border-bottom: 1px solid rgba(43,38,32,0.1); padding: 20px 0;
+  }
+  .faq-item summary {
+    cursor: pointer; font-weight: 600; font-size: 1.02rem; list-style: none;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: '+'; font-size: 1.3rem; color: var(--or-deep); flex-shrink: 0; margin-left: 12px;
+  }
+  .faq-item[open] summary::after { content: '−'; }
+  .faq-item p { margin-top: 14px; color: var(--encre-soft); }
+
+  /* Final CTA */
+  .final-cta {
+    text-align: center; padding: 100px 24px;
+    background: linear-gradient(180deg, var(--ivoire) 0%, var(--ivoire-deep) 100%);
+  }
+  .final-cta h2 { font-size: clamp(1.9rem, 6vw, 2.6rem); margin-bottom: 24px; }
+  .final-cta p { color: var(--encre-soft); margin-bottom: 8px; }
+  .final-quote {
+    font-family: 'Fraunces', serif; font-style: italic; font-size: 1.2rem;
+    margin: 28px 0; color: var(--encre);
+  }
+  .final-cta .btn { max-width: 320px; margin: 32px auto 0; }
+
+  /* Sticky mobile CTA */
+  .sticky-cta {
+    position: fixed; bottom: 0; left: 0; right: 0; background: var(--white);
+    border-top: 1px solid rgba(43,38,32,0.1); padding: 12px 16px;
+    display: flex; gap: 10px; z-index: 100; box-shadow: 0 -4px 16px rgba(0,0,0,0.06);
+  }
+  .sticky-cta .btn { flex: 1; padding: 13px 12px; font-size: 0.85rem; }
+
+  footer {
+    text-align: center; padding: 40px 24px 100px; font-size: 0.85rem; color: var(--encre-soft);
+  }
+
+  @media (min-width: 640px) {
+    .hero-ctas { flex-direction: row; max-width: 480px; }
+    .duo-cards { flex-direction: row; }
+    .duo-card { flex: 1; }
+    .pricing-cards { flex-direction: row; align-items: stretch; }
+    .price-card { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+    footer { padding-bottom: 40px; }
+    .sticky-cta { display: none; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <svg class="hero-watermark" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+    <path d="M 50 50 C 50 30, 75 30, 100 50 C 125 70, 150 70, 150 50 C 150 30, 125 30, 100 50 C 75 70, 50 70, 50 50 Z" fill="none" stroke="#A9855A" stroke-width="2.5"/>
+  </svg>
+  <div class="hero-eyebrow">Mireille Tano-Fram</div>
+  <h1>J'ai 53 ans.<br>Et ma vie commence maintenant.</h1>
+  <div class="subtitle">Avant, c'était de l'entraînement.</div>
+  <p class="hook">Qui t'a dit que ta vie était finie ?</p>
+  <div class="hero-ctas">
+    <a href="#offres" class="btn btn-primary">Je commence avec le livre — 19 €</a>
+    <a href="#livre" class="btn btn-secondary">Découvrir le livre</a>
+  </div>
+</section>
+
+<!-- LE POIDS PORTÉ -->
+<section>
+  <div class="container">
+    <div class="ornament">CE LIVRE S'ADRESSE D'ABORD À TOI</div>
+    <p class="qualify-final" style="margin-bottom: 32px;">Femme africaine, femme afro-descendante, où que tu vives dans le monde. Toi pour qui le regard de la famille, le mariage, la maternité, la réussite sociale et l'âge pèsent d'un poids particulier.</p>
+    <div class="prose">
+      <p>Le devoir. La famille. Les responsabilités.</p>
+      <p>Être une bonne fille. Une bonne épouse. Une bonne mère.</p>
+      <p>Réussir pour rendre la famille fière. Ne pas lui faire honte. Supporter. Pardonner. Rester forte, même quand ça t'épuise. Ne pas trop te plaindre. Faire passer les autres avant toi, encore et encore.</p>
+      <p style="font-family: 'Fraunces', serif; font-style: italic; font-size: 1.15rem; color: var(--encre); margin-top: 24px;">Et derrière cette femme qu'on félicite pour sa force : une femme qui n'a peut-être jamais réellement appris à choisir sa propre vie.</p>
+    </div>
+  </div>
+</section>
+
+<!-- LE BILAN -->
+<section style="background: var(--ivoire-deep);">
+  <div class="container">
+    <div class="ornament">À 50 ANS, ON REGARDE DERRIÈRE SOI</div>
+    <div class="prose">
+      <p>Et soudain, on ne peut plus faire semblant.</p>
+      <p style="font-family: 'Fraunces', serif; font-style: italic; font-size: 1.2rem; color: var(--encre);">Est-ce que c'est vraiment ça, ma vie ?</p>
+      <p>On voit les femmes de son âge. Certaines sont mariées. Certaines ont leurs enfants. Certaines ont construit leur carrière, une maison, une famille. Certaines semblent avoir réussi leur vie.</p>
+      <p>Et on fait les comptes. Et le résultat fait parfois peur.</p>
+      <p style="font-family: 'Fraunces', serif; font-style: italic; font-size: 1.2rem; color: var(--or-deep);">J'ai 50 ans. Qu'est-ce qu'il me reste ?</p>
+    </div>
+  </div>
+</section>
+
+<!-- CELIBAT COMME GRACE -->
+<section>
+  <div class="container">
+    <div class="ornament">ET SI TON CÉLIBAT N'ÉTAIT PAS UN ÉCHEC ?</div>
+    <div class="prose">
+      <p>Pendant longtemps, j'ai pensé que mon célibat était quelque chose dont je devais avoir honte.</p>
+      <p>À 50 ans, une femme célibataire peut facilement avoir l'impression d'avoir raté quelque chose. Elle regarde autour d'elle. Ses amies se sont mariées. Elles ont eu des enfants. Certaines ont construit leur famille, leur maison, leur carrière. Et elle se demande : pourquoi pas moi ?</p>
+      <p>Elle peut finir par croire qu'elle est en retard. Qu'elle doit se dépêcher. Qu'à son âge, elle n'a plus vraiment le choix.</p>
+      <p>J'ai pensé comme ça, moi aussi.</p>
+      <p>Puis un jour, quelque chose a changé. J'ai compris que mon célibat n'était peut-être pas une punition. C'était peut-être une grâce. Parce qu'il y avait une vérité que je n'avais pas encore comprise : je n'étais pas nécessairement prête à recevoir ce que je demandais. J'étais encore trop blessée. Je cherchais encore beaucoup de validation. Je n'avais pas encore suffisamment appris à me choisir.</p>
+      <p>Et si j'avais absolument voulu me marier à tout prix, simplement pour ne plus être seule, qui sait ce que j'aurais accepté ?</p>
+      <p>Alors aujourd'hui, je regarde ces neuf années de célibat autrement. Pas neuf années à attendre désespérément qu'un homme arrive. Neuf années à travailler sur moi. Mon corps. Ma vie. Mes projets. Mon rapport à moi-même. Mon être intérieur.</p>
+      <p>J'ai commencé à comprendre que certaines choses ne sont pas refusées. Elles sont parfois différées. Peut-être que ce temps avait un autre rôle : me transformer, m'aligner, me préparer, me rendre capable de reconnaître ce qui est bon pour moi lorsque cela arrivera.</p>
+      <p>Je ne sais pas ce que l'avenir me réserve. Et je n'ai plus besoin de le savoir pour être bien aujourd'hui.</p>
+      <p>À 53 ans, je suis célibataire. J'ai deux enfants. J'ai connu des relations qui ne correspondaient pas nécessairement à ce que je voulais pour moi. Mais je peux regarder mon histoire sans honte.</p>
+    </div>
+    <p class="qualify-final">Je ne suis pas en retard. Je suis simplement sur mon propre chemin.</p>
+  </div>
+</section>
+
+<!-- LE BAMBOU -->
+<section style="background: var(--ivoire-deep);">
+  <div class="container">
+    <div class="ornament">ET SI TU ÉTAIS UN BAMBOU ?</div>
+    <div class="prose">
+      <p>Il y a des femmes qui ont l'impression que tout le monde pousse plus vite qu'elles. Les autres se marient. Les autres ont des enfants. Les autres achètent leur maison, voyagent, gagnent de l'argent, semblent avoir compris la vie.</p>
+      <p>Et toi, tu regardes. Tu compares. Et tu finis par te demander : qu'est-ce qui ne va pas chez moi ?</p>
+      <p>Peut-être rien. Peut-être que tu es simplement un bambou.</p>
+      <p>Le bambou peut passer longtemps à développer ses racines avant que sa croissance devienne visible. Et puis, un jour, il pousse.</p>
+      <p>Alors cesse de mesurer ta vie avec la règle de quelqu'un d'autre. Tu n'as pas besoin de les dépasser. Tu n'as même pas besoin de les rattraper. Tu as simplement besoin de devenir pleinement celle que tu es capable de devenir.</p>
+    </div>
+    <p class="qualify-final">Ce n'était pas forcément du retard. C'était peut-être l'enracinement.</p>
+  </div>
+</section>
+
+<!-- BLESSURES -->
+<section>
+  <div class="container">
+    <div class="ornament">CE QUI RESTE, DEPUIS L'ENFANCE</div>
+    <div class="prose">
+      <p>Des paroles humiliantes. La comparaison avec les autres. Le sentiment de ne jamais être assez. Le rejet. Le manque de reconnaissance. La culpabilité. L'obligation d'être forte. La peur de décevoir, d'être seule, d'être jugée, de recommencer.</p>
+      <p>Une femme qui a passé sa vie à chercher la validation peut encore la chercher dans son couple. Une femme qui a toujours entendu qu'elle ne réussirait pas peut ne jamais oser créer son entreprise. Une femme qui a peur d'être seule peut accepter une relation qui ne lui convient pas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- POUR TOI SI -->
+<section style="background: var(--ivoire-deep);">
+  <div class="container">
+    <div class="ornament">CE LIVRE EST POUR TOI SI</div>
+    <ul class="qualify-list">
+      <li>Tu as passé beaucoup de temps à être forte pour tout le monde.</li>
+      <li>Tu as beaucoup donné.</li>
+      <li>Tu as parfois l'impression d'avoir mis ta propre vie en attente.</li>
+      <li>Tu sais que tu as encore énormément à créer.</li>
+      <li>Tu refuses de considérer ton âge comme une limite.</li>
+      <li>Tu sens qu'une nouvelle partie de ta vie est en train de commencer.</li>
+    </ul>
+    <p class="qualify-final">Et surtout : tu sens que tu n'es pas encore devenue tout ce que tu pourrais être.</p>
+  </div>
+</section>
+
+<!-- LE LIVRE -->
+<section id="livre">
+  <div class="container">
+    <div class="kicker">Le livre</div>
+    <h2 class="section-title">La vie commence à 50 ans</h2>
+    <div class="prose">
+      <p>Ce livre n'est pas le récit d'une femme qui prétend avoir tout compris. C'est le récit d'une femme qui a commencé à regarder sa vie autrement.</p>
+      <p>Elle y parle de ce qui l'a longtemps gouvernée : le regard des autres, l'argent, la maternité, la peur, la foi, l'entrepreneuriat, les blessures et la difficulté à agir lorsque l'on ne maîtrise pas encore le résultat.</p>
+      <p class="center" style="font-family: 'Fraunces', serif; font-style: italic; font-size: 1.2rem; color: var(--encre); margin-top: 28px;">Et progressivement, une autre question apparaît : qui suis-je lorsque je cesse de me définir par mes circonstances ?</p>
+    </div>
+  </div>
+</section>
+
+<!-- CE N'EST PAS -->
+<section style="background: var(--ivoire-deep);">
+  <div class="container">
+    <p class="qualify-final" style="font-size: 1.35rem;">Ce n'est pas un livre qui va te dire comment devenir une autre femme.</p>
+    <p class="center" style="color: var(--encre-soft); max-width: 480px; margin: 16px auto 0;">C'est un livre qui t'aide à regarder celle que tu es devenue après cinquante années de vie — et à décider ce que tu veux faire de la suite.</p>
+  </div>
+</section>
+
+<!-- CE QUE LE LIVRE PEUT CHANGER -->
+<section style="background: var(--ivoire-deep);">
+  <div class="container">
+    <div class="kicker">Concrètement</div>
+    <h2 class="section-title">Ce à quoi tu peux t'attendre</h2>
+    <div class="prose">
+      <p>Tu n'as pas acheté ce livre pour qu'on te dise encore une fois de « penser positif ».</p>
+      <p>Tu l'as peut-être ouvert parce qu'une question te traverse depuis quelque temps :</p>
+      <p style="font-family: 'Fraunces', serif; font-style: italic; font-size: 1.15rem; color: var(--encre);">Et si ma vie n'était pas terminée… mais que je n'avais simplement pas encore commencé la partie qui me ressemble vraiment ?</p>
+      <p>En avançant dans ces pages, tu vas peut-être commencer par regarder ton histoire autrement. Pas pour nier ce que tu as vécu. Pas pour faire semblant que tout a été facile. Pas pour oublier les années passées. Mais pour comprendre que ce qui n'est pas arrivé jusqu'ici ne détermine pas nécessairement ce qui peut encore arriver.</p>
+      <p>Tu pourrais commencer à regarder ton âge autrement. À ne plus considérer 50 ans comme le moment où il faudrait faire ses adieux à ses rêves, devenir moins exigeante, accepter ce qui reste ou se contenter de regarder les autres vivre.</p>
+      <p>Tu pourrais aussi commencer à reconnaître tout ce que tu as porté pendant des années : les attentes de la famille, le regard des autres, le besoin d'être validée, la comparaison, les responsabilités, les blessures, les déceptions, les choses que tu n'as jamais osé faire parce que tu pensais qu'il fallait d'abord avoir la permission.</p>
+      <p>Et peut-être qu'une question nouvelle va apparaître : qu'est-ce que MOI, maintenant, j'ai envie de vivre ?</p>
+      <p>Peut-être que tu découvriras que tu n'es pas aussi « en retard » que tu le pensais. Peut-être que tu comprendras pourquoi certaines peurs continuent de décider à ta place. Peut-être que tu retrouveras des projets que tu avais rangés dans un coin de ta tête en te disant : un jour…</p>
+      <p>Peut-être que tu recommenceras à envisager l'amour sans accepter n'importe quelle relation simplement parce que tu as 50 ans. Peut-être que tu recommenceras à croire que tu peux créer, entreprendre, apprendre, changer de direction, voyager, aimer, recommencer.</p>
+    </div>
+    <p class="qualify-final">Passer de « qu'est-ce qu'il me reste ? » à « qu'est-ce que je peux encore créer ? »</p>
+    <p class="center" style="color: var(--encre-soft); font-size: 0.92rem; margin-top: 24px;">Ce livre ne te promet pas une nouvelle vie en quelques pages. Il veut faire quelque chose de plus essentiel : te rappeler que tu as encore une vie à vivre. Et que tu as le droit de décider de ce qu'elle sera.</p>
+  </div>
+</section>
+
+<!-- 8 MOUVEMENTS -->
+<section class="movements-wrap">
+  <div class="container">
+    <div class="kicker">Le chemin du livre</div>
+    <h2 class="section-title">Huit mouvements</h2>
+    <div class="movements-path">
+      <div class="movement-item"><div class="movement-num">01</div><div class="movement-title">La femme qu'on m'a dit d'être</div></div>
+      <div class="movement-item"><div class="movement-num">02</div><div class="movement-title">Spectatrice de ma vie</div></div>
+      <div class="movement-item"><div class="movement-num">03</div><div class="movement-title">Revenir à qui je suis</div></div>
+      <div class="movement-item"><div class="movement-num">04</div><div class="movement-title">Ralentir pour mieux vivre</div></div>
+      <div class="movement-item"><div class="movement-num">05</div><div class="movement-title">Créer n'est pas agir</div></div>
+      <div class="movement-item"><div class="movement-num">06</div><div class="movement-title">Agis malgré l'incertitude</div></div>
+      <div class="movement-item"><div class="movement-num">07</div><div class="movement-title">La femme que je deviens</div></div>
+      <div class="movement-item"><div class="movement-num">08</div><div class="movement-title">L'eau trouve son chemin</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSITION -->
+<div class="transition-break">
+  <h2>Tu as lu.<br>Et maintenant ?</h2>
+  <p style="max-width: 420px; margin: 20px auto 0; color: var(--encre-soft);">Lire peut provoquer une prise de conscience. Mais certaines choses demandent d'être vécues.</p>
+  <div class="sub">C'est pour cela qu'existe La Traversée.</div>
+</div>
+
+<!-- PROGRAMME -->
+<section>
+  <div class="container">
+    <div class="kicker">Le programme</div>
+    <h2 class="section-title">La Traversée<br><span style="font-size: 0.55em; color: var(--or-deep); font-style: italic;">40 jours pour revenir à soi</span></h2>
+    <div class="prose">
+      <p>La Traversée n'est pas un programme à réussir. C'est un espace pour ralentir, regarder, comprendre et choisir autrement.</p>
+      <p>Chaque journée t'invite à travailler une dimension particulière de ton rapport à toi-même et à ta vie : réflexion, méditation, questions, pratiques personnelles, gratitude.</p>
+      <p>Le dernier jour ne promet pas une arrivée définitive : il invite à reprendre la route avec ce qui a été retrouvé.</p>
+    </div>
+    <p style="text-align: center; font-family: 'Fraunces', serif; font-style: italic; font-size: 1.15rem; margin-top: 28px; color: var(--or-deep);">« Tu ne fais pas ces jours pour devenir quelqu'un d'autre. Tu les fais pour retrouver celle que tu es. »</p>
+  </div>
+</section>
+
+<!-- CE QUE LES 40 JOURS APPORTENT -->
+<section>
+  <div class="container">
+    <div class="kicker">Concrètement</div>
+    <h2 class="section-title">Ce que tu vas commencer à retrouver pendant les 40 jours</h2>
+    <div class="prose">
+      <p>Lire peut provoquer une prise de conscience. Mais certaines prises de conscience demandent ensuite à être vécues. C'est précisément le rôle de La Traversée.</p>
+      <p>Pendant 40 jours, tu vas créer un espace pour ralentir, observer, questionner et écouter ce qui se passe réellement en toi.</p>
+      <p>Tu vas revenir sur certaines habitudes, certaines peurs, certaines attentes et certains réflexes qui peuvent encore influencer tes choix. Tu vas apprendre à regarder ton histoire avec davantage de recul. À distinguer ce que tu veux vraiment de ce que tu fais pour être acceptée. À entendre certaines choses que tu évitais peut-être jusque-là. À reconnaître ce qui doit rester derrière toi.</p>
+      <p>Et surtout, à commencer à faire de la place à ce qui veut maintenant prendre vie.</p>
+      <p>Au fil des jours, tu pourrais retrouver : plus de clarté sur ce que tu veux ; une meilleure compréhension de ce qui te freine ; une relation différente avec ton histoire ; le droit de poser certaines limites ; le courage de regarder tes désirs sans immédiatement les censurer ; l'envie de passer de l'attente à l'action.</p>
+    </div>
+    <p class="qualify-final">Les 40 jours ne sont pas une course. Tu ne vas pas « réparer » toute ta vie en 40 jours. Tu ne vas pas devenir quelqu'un d'autre. Tu vas commencer à revenir vers toi.</p>
+    <p class="center" style="color: var(--encre-soft); font-size: 0.92rem; margin-top: 24px;">Et peut-être qu'au bout du chemin, la question ne sera plus « est-ce qu'il est trop tard pour moi ? » mais « qu'est-ce que je choisis maintenant ? » C'est cela, La Traversée. Pas le chemin vers une nouvelle femme. Le chemin de retour vers celle que tu es.</p>
+  </div>
+</section>
+
+<!-- DUO -->
+<section class="duo-wrap">
+  <div class="container-wide">
+    <div class="kicker">L'expérience complète</div>
+    <div class="duo-cards">
+      <div class="duo-card">
+        <div class="icon-label">Le livre</div>
+        <h3>La vie commence à 50 ans</h3>
+        <ul>
+          <li>Pour prendre du recul.</li>
+          <li>Pour comprendre.</li>
+          <li>Pour voir autrement son histoire.</li>
+        </ul>
+      </div>
+      <div class="duo-card">
+        <div class="icon-label">Le parcours</div>
+        <h3>La Traversée<br><span style="font-size: 0.75em; font-style: italic; color: var(--or-deep);">40 jours pour revenir à soi</span></h3>
+        <ul>
+          <li>Pour ralentir.</li>
+          <li>Pour pratiquer.</li>
+          <li>Pour commencer à marcher autrement.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="duo-together">
+      <div class="line1">Une histoire à lire.</div>
+      <div class="line2">Un chemin à traverser.</div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFRES -->
+<section id="offres" class="pricing-wrap">
+  <div class="container-wide">
+    <div class="kicker">Le parcours</div>
+    <h2 class="section-title">Comment ça se passe</h2>
+
+    <div class="funnel-wrap">
+      <div class="funnel-step highlight">
+        <div class="fn-num">01</div>
+        <div class="fn-body">
+          <div class="fn-title">Le livre</div>
+          <div class="fn-sub">La vie commence à 50 ans</div>
+        </div>
+        <div class="fn-price">19 €</div>
+      </div>
+      <div class="funnel-arrow">↓</div>
+      <div class="funnel-step">
+        <div class="fn-num">02</div>
+        <div class="fn-body">
+          <div class="fn-title">Les 7 premiers jours de La Traversée</div>
+          <div class="fn-sub">Offerts avec le livre, pour commencer à expérimenter</div>
+        </div>
+        <div class="fn-price">Offert</div>
+      </div>
+      <div class="funnel-arrow">↓</div>
+      <div class="funnel-step">
+        <div class="fn-num">03</div>
+        <div class="fn-body">
+          <div class="fn-title">La Traversée complète</div>
+          <div class="fn-sub">40 jours pour revenir à soi — pour aller beaucoup plus loin</div>
+        </div>
+        <div class="fn-price">49 €</div>
+      </div>
+    </div>
+
+    <p class="center" style="color: var(--encre-soft); max-width: 480px; margin: 0 auto 40px; font-size: 0.95rem;">
+      Commence avec le livre. Reçois les 7 premiers jours de La Traversée. Puis, si tu veux continuer, poursuis les 40 jours.
+    </p>
+
+    <div class="pricing-cards">
+      <div class="price-card">
+        <h3>Le livre</h3>
+        <div class="price-sub">La vie commence à 50 ans<br>+ les 7 premiers jours de La Traversée offerts</div>
+        <div class="price-value">19 €</div>
+        <!-- LIEN PAYSTACK À INSÉRER ICI — livre 19€ -->
+        <a href="https://paystack.shop/pay/xb5l06qrjl" class="btn btn-secondary" target="_blank" rel="noopener">Je commence avec le livre</a>
+      </div>
+      <div class="price-card featured">
+        <div class="badge">Le plus complet</div>
+        <h3>L'expérience complète</h3>
+        <div class="price-sub">Livre + La Traversée complète — 40 jours pour revenir à soi</div>
+        <div class="price-value">59 €</div>
+        <!-- LIEN PAYSTACK À INSÉRER ICI — expérience complète 59€ -->
+        <a href="https://paystack.shop/pay/7o-xl-wpv8" class="btn btn-gold" target="_blank" rel="noopener">Je veux l'expérience complète — 59 €</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CE QUE TU RECOIS -->
+<section>
+  <div class="container">
+    <div class="kicker">Concrètement</div>
+    <h2 class="section-title">Ce que tu reçois</h2>
+    <ul class="receive-list">
+      <li>La vie commence à 50 ans — livre numérique</li>
+      <li>Les 7 premiers jours de La Traversée — offerts avec le livre</li>
+      <li>La Traversée complète — 40 jours pour revenir à soi — en continuation, ou incluse avec l'expérience complète</li>
+      <li>Fichiers accessibles immédiatement après ton achat</li>
+    </ul>
+    <div class="prose" style="margin-top: 32px;">
+      <p>Tu lis où tu veux, comme tu veux : sur ton ordinateur, ta tablette, ton téléphone, ou ta liseuse.</p>
+      <p>Le PDF garde la mise en page originale, pensée pour être belle à l'écran comme à l'impression. L'EPUB, lui, s'adapte à la taille de ton écran — le texte se réajuste tout seul, comme dans un vrai livre numérique, pour une lecture confortable sur ton iPhone, ton Android, ta tablette ou ta liseuse compatible.</p>
+      <p style="font-style: italic; color: var(--or-deep);">Tu n'as pas besoin d'un appareil particulier. Tu as juste besoin d'un moment pour toi.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MIREILLE ARRIVE -->
+<section class="about-wrap">
+  <div class="container">
+    <div class="about-photo-slot">Photo de Mireille</div>
+    <div class="ornament">ET PUIS MIREILLE ARRIVE</div>
+    <div class="prose center">
+      <p>Pas comme une femme qui prétend avoir tout compris.</p>
+      <p>Moi aussi, j'ai fait le bilan. J'ai connu des réussites et des échecs. J'ai travaillé. J'ai entrepris. J'ai été mère. J'ai traversé des périodes difficiles. J'ai connu le doute, et les moments où je me suis demandé ce que j'allais faire de ma vie.</p>
+      <p>Et pourtant, autour de mes 50 ans, quelque chose s'est passé. J'ai compris que je ne pouvais plus continuer à regarder ma vie à travers ce qui me manquait.</p>
+      <p style="font-family: 'Fraunces', serif; font-style: italic; font-size: 1.2rem; color: var(--encre);">« Je ne peux pas avoir tout ce talent-là et être assise là. »</p>
+      <p>C'est là qu'a commencé la nouvelle histoire. J'ai 53 ans aujourd'hui, et je suis loin de considérer que mon histoire est terminée.</p>
+    </div>
+    <h3 style="text-align:center; margin-top: 32px;">Mireille Tano-Fram</h3>
+    <div class="about-role">Entrepreneure, stratège et créatrice de projets autour de la transformation humaine</div>
+  </div>
+</section>
+
+<!-- CE QUI DOIT ÊTRE DIFFÉRENT -->
+<section>
+  <div class="container">
+    <div class="kicker">À la fin</div>
+    <h2 class="section-title">Qu'est-ce qui doit être différent ?</h2>
+    <div class="prose">
+      <p>Pas une promesse de nouvelle vie magique.</p>
+      <p>Mais une femme qui ne regarde plus son âge de la même manière. Une femme qui sait davantage ce qu'elle veut. Une femme qui comprend mieux ce qui l'a retenue. Une femme qui cesse progressivement de demander aux autres la permission d'exister pleinement. Une femme qui recommence à envisager des possibilités là où elle ne voyait que des limites.</p>
+    </div>
+    <p class="qualify-final" style="font-size: 1.3rem;">Je ne suis pas en retard. Je suis encore là. Et maintenant, je choisis la suite.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="container">
+    <div class="kicker">Questions</div>
+    <h2 class="section-title">Ce que tu veux peut-être savoir</h2>
+    <details class="faq-item">
+      <summary>Est-ce uniquement pour les femmes de 50 ans ?</summary>
+      <p>Non. Le titre parle de 50 ans, mais le sujet est plus large : le moment où l'on décide de reprendre sa vie en main et de revenir à soi.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Est-ce un programme thérapeutique ?</summary>
+      <p>Non. Il s'agit d'une expérience personnelle et réflexive, pas d'un dispositif médical ou thérapeutique.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Dois-je commencer par le livre ?</summary>
+      <p>Oui. Le livre est le point d'entrée : il inclut les 7 premiers jours de La Traversée, offerts, pour commencer à expérimenter l'approche. La Traversée complète — 40 jours pour revenir à soi — vient ensuite, quand tu es prête à aller plus loin.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Dois-je faire les 40 jours consécutivement ?</summary>
+      <p>Le programme est conçu autour de 40 jours, mais l'objectif n'est pas la performance. Il s'agit d'un chemin que l'on peut reprendre.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Est-ce adapté au téléphone ?</summary>
+      <p>Oui. Les deux produits sont pensés pour une lecture confortable sur mobile.</p>
+    </details>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="final-cta">
+  <h2>Qui t'a dit que ta vie était finie ?</h2>
+  <div class="prose" style="max-width: 480px; margin: 0 auto;">
+    <p>Qui t'a dit que tu devais te contenter de ce qui reste ?</p>
+    <p>Qui t'a dit que tu ne pouvais plus aimer ?</p>
+    <p>Qui t'a dit que tu ne pouvais plus créer, plus entreprendre ?</p>
+    <p>Qui t'a dit que tu devais accepter n'importe quelle relation parce que ton âge ne te permettrait plus d'être exigeante ?</p>
+  </div>
+  <div class="final-quote">Personne ne me l'a dit.<br>Et même si quelqu'un me l'avait dit, je ne le croirais pas.</div>
+  <p style="max-width: 420px; margin: 0 auto 8px; color: var(--encre-soft);">Tu n'as pas besoin d'avoir toutes les réponses. Tu peux simplement commencer.</p>
+  <div class="final-quote" style="margin-top:20px;">La vie commence à 50 ans.<br>Avant, c'était de l'entraînement.</div>
+  <a href="#offres" class="btn btn-primary">Je commence</a>
+</section>
+
+<footer>
+  © Mireille Tano-Fram — FRAMYXCC EMPIRES
+</footer>
+
+<!-- Sticky mobile CTA -->
+<div class="sticky-cta">
+  <a href="#offres" class="btn btn-primary">Je commence avec le livre — 19 €</a>
+</div>
+
+</body>
+</html>

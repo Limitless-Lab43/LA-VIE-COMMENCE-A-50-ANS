@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Merci — L'expérience complète</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ivoire: #FAF6F0; --ivoire-deep: #F1E9DD; --encre: #2B2620;
+    --encre-soft: #5C544A; --or: #C9A876; --or-deep: #A9855A; --white: #FFFFFF;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', sans-serif; background: var(--ivoire); color: var(--encre);
+    line-height: 1.6; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    padding: 24px;
+  }
+  .card {
+    max-width: 560px; width: 100%; background: var(--white); border-radius: 4px;
+    padding: 48px 32px; text-align: center; border: 1px solid rgba(43,38,32,0.08);
+  }
+  .ornament { color: var(--or-deep); font-size: 13px; letter-spacing: 0.15em; margin-bottom: 20px; }
+  h1 {
+    font-family: 'Fraunces', serif; font-weight: 500; font-size: 1.8rem; margin-bottom: 12px;
+  }
+  p { color: var(--encre-soft); margin-bottom: 28px; font-size: 1.02rem; }
+  .group-label {
+    text-align: left; font-size: 12px; letter-spacing: 0.1em; color: var(--or-deep);
+    text-transform: uppercase; margin: 24px 0 10px;
+  }
+  .files { display: flex; flex-direction: column; gap: 14px; }
+  .file-btn {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    padding: 16px 22px; border: 1px solid var(--or); border-radius: 4px;
+    text-decoration: none; color: var(--encre); font-weight: 600; font-size: 0.95rem;
+    transition: background 0.15s ease;
+  }
+  .file-btn:hover { background: var(--ivoire-deep); }
+  .file-btn .arrow { color: var(--or-deep); }
+  .note {
+    margin-top: 28px; padding-top: 24px; border-top: 1px solid rgba(43,38,32,0.1);
+    font-size: 0.9rem; color: var(--encre-soft);
+  }
+  .signature {
+    font-family: 'Fraunces', serif; font-style: italic; color: var(--or-deep);
+    margin-top: 20px; font-size: 1.05rem;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="ornament">MERCI</div>
+    <h1>Ton expérience complète t'attend.</h1>
+    <p>Ton achat est confirmé. Voici tous tes fichiers : le livre et le programme complet des 40 jours.</p>
+
+    <div class="group-label">Le livre</div>
+    <div class="files">
+      <!-- LIEN FICHIER PDF LIVRE À INSÉRER ICI -->
+      <a href="#" class="file-btn" data-file-status="en-attente">
+        <span>Télécharger le PDF</span>
+        <span class="arrow">↓</span>
+      </a>
+      <!-- LIEN FICHIER EPUB LIVRE À INSÉRER ICI -->
+      <a href="#" class="file-btn" data-file-status="en-attente">
+        <span>Télécharger l'EPUB (téléphone, tablette, liseuse)</span>
+        <span class="arrow">↓</span>
+      </a>
+    </div>
+
+    <div class="group-label">La Traversée — 40 jours pour revenir à soi</div>
+    <div class="files">
+      <!-- LIEN FICHIER PDF TRAVERSEE À INSÉRER ICI -->
+      <a href="#" class="file-btn" data-file-status="en-attente">
+        <span>Télécharger le programme complet (PDF)</span>
+        <span class="arrow">↓</span>
+      </a>
+    </div>
+
+    <div class="note">
+      Un problème pour accéder à tes fichiers ? Écris-nous, nous te les renverrons directement.
+    </div>
+    <div class="signature">La vie commence à 50 ans.<br>Avant, c'était de l'entraînement.</div>
+  </div>
+</body>
+</html>
